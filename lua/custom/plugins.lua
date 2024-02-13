@@ -35,6 +35,29 @@ local plugins = {
     opts = function ()
       return require "custom.configs.null-ls"
     end
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "debugloop/telescope-undo.nvim",
+    },
+    keys = {
+      {
+        "<leader>u",
+        "<cmd>Telescope undo<cr>",
+        desc = "undo history",
+      },
+    },
+    config = function()
+      require("telescope").setup({
+      -- the rest of your telescope config goes here
+        extensions = {
+          undo = { },
+        },
+      })
+      require("telescope").load_extension("undo")
+    end,
   }
 }
 
