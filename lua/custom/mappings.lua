@@ -1,9 +1,5 @@
 local M = {}
 
-M.disable = {
-    ["Q"] = { "<nop>", "nop" },
-}
-
 M.custom = {
   n = {
     ["J"] = { "mzJ`z", "Join lines" },
